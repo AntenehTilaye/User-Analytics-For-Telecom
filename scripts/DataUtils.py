@@ -4,8 +4,11 @@ def missing_percent(df):
 
     '''
         how many missing values exist or better still what is the % of missing values in the dataset?
-    '''
     
+        args:
+            df: DataFrame - the data frame
+    '''
+        
     # Calculate total number of cells in dataframe
     totalCells = np.product(df.shape)
 
