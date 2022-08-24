@@ -20,3 +20,5 @@ def missing_percent(df):
 
     # Calculate percentage of missing values
     print("The dataset contains", round(((totalMissing/totalCells) * 100), 2), "%", "missing values.")
+    
+
