@@ -126,4 +126,46 @@ def fix_outlier(df, column):
     
     return df[column]
 
+def remove_outlier(df, column):
+    Q1 = np.percentile(df[column], 25,
+                   interpolation = 'midpoint')
+ 
+    Q3 = np.percentile(df[column], 75,
+                    interpolation = 'midpoint')
+    IQR = Q3 - Q1
+    
+    print("Old Shape: ", df.shape)
+    
+    # Upper bound
+    upper = np.where(df[column] >= (Q3+1.5*IQR))
+    # Lower bound
+    lower = np.where(df[column] <= (Q1-1.5*IQR))
+    
+    ''' Removing the Outliers '''
+    df.drop(upper[0], inplace = True)
+    df.drop(lower[0], inplace = True)
 
+    print("New Shape: ", df.shape)
+    return df
+
+def change_outlier(df, column):
+    Q1 = np.percentile(df[column], 25,
+                   interpolation = 'midpoint')
+ 
+    Q3 = np.percentile(df[column], 75,
+                    interpolation = 'midpoint')
+    IQR = Q3 - Q1
+    
+    print("Old Shape: ", df.shape)
+    
+    # Upper bound
+    upper = np.where(df[column] >= (Q3+1.5*IQR))
+    # Lower bound
+    lower = np.where(df[column] <= (Q1-1.5*IQR))
+    
+    ''' Removing the Outliers '''
+    df.drop(upper[0], inplace = True)
+    df.drop(lower[0], inplace = True)
+
+    print("New Shape: ", df.shape)
+    return df
