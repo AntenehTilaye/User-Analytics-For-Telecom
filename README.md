@@ -67,7 +67,7 @@ Data can be found [here at google drive](https://docs.google.com/spreadsheets/d/
 
 👤 **Anteneh Tilaye**
 
-- GitHub: [Anteneh Tilaye](https://github.com/Anteneh Tilaye)
+- GitHub: [Anteneh Tilaye](https://github.com/AntenehTilaye)
 - LinkedIn: [Anteneh Tilaye](https://www.linkedin.com/in/anteneh-tilaye-bb6770149/)
 - Website: [Anteneh Tilaye Demo Porfolio](https://antenehtilaye.github.io/)
 
