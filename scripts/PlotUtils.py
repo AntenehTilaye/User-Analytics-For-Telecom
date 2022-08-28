@@ -26,6 +26,16 @@ def plot_bar(df:pd.DataFrame, x_col:str, y_col:str, title:str, xlabel:str, ylabe
     plt.ylabel(ylabel, fontsize=16)
     plt.show()
 
+def plot_bar_sorted(df:pd.DataFrame, x_col:str, y_col:str, title:str, xlabel:str, ylabel:str)->None:
+    plt.figure(figsize=(12, 7))
+    sns.barplot(data = df, x=x_col, y=y_col, order=df.sort_values(y_col, ascending=False)[x_col])
+    plt.title(title, size=20)
+    plt.xticks(rotation=75, fontsize=14)
+    plt.yticks( fontsize=14)
+    plt.xlabel(xlabel, fontsize=16)
+    plt.ylabel(ylabel, fontsize=16)
+    plt.show()
+
 def plot_heatmap(df:pd.DataFrame, title:str, cbar=False)->None:
     plt.figure(figsize=(12, 7))
     sns.heatmap(df, annot=True, cmap='viridis', vmin=0, vmax=1, fmt='.2f', linewidths=.7, cbar=cbar )
@@ -59,3 +69,5 @@ def format_float(value):
     return f'{value:,.2f}'
 
 pd.options.display.float_format = format_float
+
+
