@@ -142,8 +142,8 @@ def remove_outlier(df, column):
     lower = np.where(df[column] <= (Q1-1.5*IQR))
     
     ''' Removing the Outliers '''
-    df.drop(upper[0], inplace = True)
-    df.drop(lower[0], inplace = True)
+    df = df.drop(upper[0])
+    df = df.drop(lower[0])
 
     print("New Shape: ", df.shape)
     return df
@@ -169,3 +169,4 @@ def change_outlier(df, column):
 
     print("New Shape: ", df.shape)
     return df
+
